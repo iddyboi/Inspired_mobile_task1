@@ -65,16 +65,23 @@ class App extends Component<StateProps> {
     console.log(this.state);
     return (
       <div>
-        <form onSubmit={e => this.handleSubmit(e)}>
-          <Header text="Username List" />
-          <input
-            type="text"
-            placeholder="enter Username"
-            value={this.state.username}
-            onChange={e => this.setState({ username: e.target.value })}
-          />
-          <button type="submit">Add Username</button>
-          <section className="username-list">{this.renderUsernames()}</section>
+        <Header text="Username List" />
+        <form className="form-user" onSubmit={e => this.handleSubmit(e)}>
+          <div className="form-content">
+            <input
+              type="text"
+              placeholder="enter Username"
+              value={this.state.username}
+              onChange={e => this.setState({ username: e.target.value })}
+            />
+            <button type="submit">Add Username</button>
+          </div>
+          <div className="usernames">
+            <h3>Usernames</h3>
+            <section className="username-list">
+              {this.renderUsernames()}
+            </section>
+          </div>
         </form>
 
         <div>
