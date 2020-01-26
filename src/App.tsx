@@ -7,6 +7,7 @@ class App extends Component<StateProps> {
   state = {
     username: "",
     username_list: [],
+    username_copy: [],
     randomUser: null
   };
 
@@ -21,7 +22,8 @@ class App extends Component<StateProps> {
           value: this.state.username,
           added: false
         }
-      ]
+      ],
+      username_copy: [...this.state.username_copy, this.state.username]
     });
   }
   private timeInMilliSeconds(): Number {
@@ -51,9 +53,9 @@ class App extends Component<StateProps> {
   }
   randomUsernameHandler = () => {
     const randNumb = Math.floor(
-      Math.random() * this.state.username_list.length
+      Math.random() * this.state.username_copy.length
     );
-    const randomUsername = this.state.username_list[randNumb];
+    const randomUsername = this.state.username_copy[randNumb];
 
     this.setState({
       randomUser: randomUsername
