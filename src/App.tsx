@@ -35,9 +35,12 @@ class App extends Component<StateProps> {
     return this.state.username_list.map(
       (username: StateList, index: number) => {
         return (
-          <div key={username.id}>
+          <div className="username-gen" key={username.id}>
             <span>{username.value}</span>
-            <button onClick={() => this.deleteTask(username.id)}>
+            <button
+              className="delete"
+              onClick={() => this.deleteUsername(username.id)}
+            >
               Delete Username
             </button>
           </div>
@@ -45,7 +48,7 @@ class App extends Component<StateProps> {
       }
     );
   }
-  deleteTask(id: number) {
+  deleteUsername(id: number) {
     const filtered: Array<StateList> = this.state.username_list.filter(
       (Uid: StateList) => Uid.id !== id
     );
@@ -86,9 +89,16 @@ class App extends Component<StateProps> {
           </div>
         </form>
 
-        <div>
-          <button onClick={this.randomUsernameHandler}>Random</button>
-          <p>{this.state.randomUser !== null && this.state.randomUser}</p>
+        <div className="randome-section">
+          <button
+            className="random-selector"
+            onClick={this.randomUsernameHandler}
+          >
+            Random
+          </button>
+          <p className="random-p">
+            {this.state.randomUser !== null && this.state.randomUser}
+          </p>
         </div>
       </div>
     );
