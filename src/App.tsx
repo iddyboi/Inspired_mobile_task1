@@ -84,7 +84,9 @@ class App extends Component<StateProps> {
               value={this.state.username}
               onChange={e => this.setState({ username: e.target.value })}
             />
-            <button type="submit">Add Username</button>
+            <button className="submit" type="submit">
+              Add Username
+            </button>
           </div>
           <div className="usernames">
             <h3>Usernames</h3>

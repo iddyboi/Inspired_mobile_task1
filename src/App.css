@@ -32,14 +32,17 @@ body {
   outline: none;
 }
 .form-user button {
-  padding: 6px 19px;
+  padding: 10px 19px;
   cursor: pointer;
   border-radius: 8px;
   border: none;
-  margin: 8px;
-  background-color: rgb(4, 54, 189);
+  margin: 8px auto;
+
   color: #fff;
   width: 150px;
+}
+.submit {
+  background-color: rgb(4, 54, 189);
 }
 .form-content {
   display: flex;
@@ -55,6 +58,7 @@ body {
   padding: 10px;
 }
 .usernames h3 {
+  text-align: center;
 }
 .randome-section {
   height: 40vh;
