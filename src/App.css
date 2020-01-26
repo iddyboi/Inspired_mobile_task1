@@ -5,14 +5,19 @@
 }
 body {
   font-family: sans-serif;
-  background-color: bisque;
+  background: rgb(170, 192, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(170, 192, 255, 1) 45%,
+    rgba(164, 255, 213, 1) 80%
+  );
 }
 .header {
   text-align: center;
 }
 .form-user {
-  background-color: #777;
-  width: 400px;
+  background-color: #fff;
+  width: 600px;
   margin: 50px auto;
   border-radius: 12px;
   padding: 20px;
@@ -20,9 +25,11 @@ body {
 
 .form-user input {
   padding: 6px 12px;
+
   margin: 4px;
-  border-radius: 6px;
   border: none;
+  border-bottom: 2px solid #333;
+  outline: none;
 }
 .form-user button {
   padding: 6px 19px;
@@ -30,11 +37,14 @@ body {
   border-radius: 8px;
   border: none;
   margin: 8px;
+  background-color: rgb(4, 54, 189);
+  color: #fff;
+  width: 150px;
 }
 .form-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
+
   padding: 10px;
 }
 .username-list {
@@ -45,10 +55,8 @@ body {
   padding: 10px;
 }
 .usernames h3 {
-  text-decoration: underline;
 }
 .randome-section {
-  background-color: black;
   height: 40vh;
   color: #fff;
   text-align: center;
@@ -63,6 +71,7 @@ body {
 }
 .delete {
   background-color: red;
+  color: #fff;
   margin-left: 30px;
 }
 .username-gen {

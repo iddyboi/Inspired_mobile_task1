@@ -4,6 +4,7 @@ import Header from "./Components/Header";
 import "./App.css";
 
 class App extends Component<StateProps> {
+  // where all states are kept
   state = {
     username: "",
     username_list: [],
@@ -11,6 +12,7 @@ class App extends Component<StateProps> {
     randomUser: null
   };
 
+  // anytime a  input is submitted it appends to the states using usState method
   handleSubmit(e: React.FormEvent<HTMLFormElement>): void {
     e.preventDefault();
     this.setState({
@@ -26,11 +28,14 @@ class App extends Component<StateProps> {
       username_copy: [...this.state.username_copy, this.state.username]
     });
   }
+
+  //  i created this method to generate unique keys for the username list to be deleted
   private timeInMilliSeconds(): Number {
     const date: Date = new Date();
     return date.getTime();
   }
 
+  // this function takes all the usernames in the username list and maps them onto each div element
   renderUsernames() {
     return this.state.username_list.map(
       (username: StateList, index: number) => {
@@ -75,7 +80,7 @@ class App extends Component<StateProps> {
           <div className="form-content">
             <input
               type="text"
-              placeholder="enter Username"
+              placeholder="Enter Username"
               value={this.state.username}
               onChange={e => this.setState({ username: e.target.value })}
             />
@@ -105,6 +110,8 @@ class App extends Component<StateProps> {
   }
 }
 export default App;
+
+// all props listed below
 
 interface StateProps {
   username?: string;
